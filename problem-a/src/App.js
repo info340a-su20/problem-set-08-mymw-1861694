@@ -6,3 +6,12 @@ const EXAMPLE_SENATORS = [
 ];
 
 /* Your code goes here */
+export class App extends Component {
+  render() {
+    let div = React.createElement('div', {className: 'container'});
+    let h1 = <h1>"US Senators 2019"</h1>;
+    div.appendChild(h1);
+    return div;
+  }
+  
+} 
