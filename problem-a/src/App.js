@@ -16,7 +16,7 @@ export class App extends Component {
     return div;
   }
 } 
-
+maps the provided EXAMPLE_SENATORS array to an array of <SenatorRow>
 export class SenatorTable extends Component {
   render() {
     let table = <table className='table table-bordered'></table>
@@ -50,13 +50,15 @@ export class SenatorRow extends Component {
     })
     return (
       <tr>
-        {oneSenator}
-        <td content="name" />
-        <td content="state party" />
-        let num = <a href="tel:"{ this.props.number } />
-        <td content={num} />
-        let twit = <a href="https://twitter.com/"{ @+this.props.twitter } />
-        <td content={twit} />
+        <tbody>
+          {oneSenator}
+          <td content="name" />
+          <td content="state party" />
+          let num = <a href="tel:"{ this.props.number } />
+          <td content={num} />
+          let twit = <a href="https://twitter.com/"{ @+this.props.twitter } />
+          <td content={twit} />
+        </tbody>
       </tr>
     )
   }
