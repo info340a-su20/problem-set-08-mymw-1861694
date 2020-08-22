@@ -26,20 +26,33 @@ export class SenatorTable extends Component {
 //prop called cols that is an array of column names (as Strings).
 export class TableHeader extends Component {
   render() {
+    let colItems = this.props.cols.map((item) => {
+      let header = <th key={item} />
+      return header;
+    })
+    return (
     <thead>
       <tr>
-        <th>
-          //one for each String in the cols prop.
-        </th>
+        {colItems}
       </tr>
     </thead>
+    );
   }
 }
+let colArray = ['Name', 'State', 'Phone', 'Twitter'];
+ReactDOM.render(<TableHeader key={colArray} />,
+  document.getElementById('root'));
 
-
-Use the .map() function to convert the cols prop into an array of <th> DOM elements (using JSX and inline expressions), and then include this array in the returned DOM elements.
-
-    Be sure to give each <th> element a key attribute (the column name string is a fine value) so that React can keep track of it.
-
-Include an instance of the TableHeader class in DOM rendered by the SenatorTable class (as a child of the <table>). The SenatorTable class should pass the TableHeader it creates a cols prop that is the array ['Name', 'State', 'Phone', 'Twitter'].
+export class SenatorRow extends Component {
+  render() {
+    let senatorItems = this.props.senator.map((items) => {
+      let oneSenator = <td content={items} />
+    })
+    return (
+      <tr>
+        {senatorItems}
+      </tr>
+    )
+  }
+}
 
