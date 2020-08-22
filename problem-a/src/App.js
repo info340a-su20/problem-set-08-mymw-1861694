@@ -27,7 +27,7 @@ export class SenatorTable extends Component {
 export class TableHeader extends Component {
   render() {
     let colItems = this.props.cols.map((item) => {
-      let header = <th key={item} />
+      let header = <th cols={item} />
       return header;
     })
     return (
@@ -40,7 +40,7 @@ export class TableHeader extends Component {
   }
 }
 let colArray = ['Name', 'State', 'Phone', 'Twitter'];
-ReactDOM.render(<TableHeader key={colArray} />,
+ReactDOM.render(<TableHeader cols={colArray} />,
   document.getElementById('root'));
 
 export class SenatorRow extends Component {
@@ -50,9 +50,18 @@ export class SenatorRow extends Component {
     })
     return (
       <tr>
-        {senatorItems}
+        {oneSenator}
+        <td content="name" />
+        <td content="state party" />
+        let num = <a href="tel:"{ this.props.number } />
+        <td content={num} />
+        let twit = <a href="https://twitter.com/"{ @+this.props.twitter } />
+        <td content={twit} />
       </tr>
     )
   }
 }
+ReactDOM.render(<SenatorRow content={EXAMPLE_SENATORS} />,
+  document.getElementById('root'));
+
 
