@@ -7,7 +7,7 @@ const EXAMPLE_SENATORS = [
 ];
 
 /* Your code goes here */
-export class App extends React.Component {
+export class App extends Component {
   render() {
     let div = (<div className='container'>
       <h1>"US Senators 2019"</h1>
@@ -17,14 +17,14 @@ export class App extends React.Component {
   }
 } 
 
-export class SenatorTable extends React.Component {
+export class SenatorTable extends Component {
   render() {
     let table = <table className='table table-bordered'></table>
   }
 }
 
 //prop called cols that is an array of column names (as Strings).
-export class TableHeader extends React.Component {
+export class TableHeader extends Component {
   render() {
     <thead>
       <tr>
